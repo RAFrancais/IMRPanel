@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1577419380541.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E2887DE1",
+    "lastKnownWriteTime" : 2481042943426913650,
+    "last_content_update" : 1577419380541,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "C43BC067",
+        "caption" : "imr2013",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=imr2013&cache_key=C43BC067",
+        "displayedObservations" : 51,
+        "environment" : "",
+        "expression" : "imr2013",
+        "object" : "imr2013",
+        "preview" : 0,
+        "totalObservations" : 51,
+        "variables" : 2
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 22,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

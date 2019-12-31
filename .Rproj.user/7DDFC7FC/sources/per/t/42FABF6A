@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1577407982425.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "42FABF6A",
+    "lastKnownWriteTime" : 7810123700365321520,
+    "last_content_update" : 1577407982425,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "738200F1",
+        "caption" : "obe2012",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=obe2012&cache_key=738200F1",
+        "displayedObservations" : "51",
+        "environment" : "",
+        "expression" : "obe2012",
+        "object" : "obe2012",
+        "preview" : "0",
+        "totalObservations" : "51",
+        "variables" : "2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

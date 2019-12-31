@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1577419347831.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2AB29EC4",
+    "lastKnownWriteTime" : 1531931119152,
+    "last_content_update" : 1577419347831,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "1380B4DF",
+        "caption" : "hhi2013",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=hhi2013&cache_key=1380B4DF",
+        "displayedObservations" : 51,
+        "environment" : "",
+        "expression" : "hhi2013",
+        "object" : "hhi2013",
+        "preview" : 0,
+        "totalObservations" : 51,
+        "variables" : 2
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

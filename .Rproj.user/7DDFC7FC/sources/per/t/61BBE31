@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1577419380964.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "61BBE31",
+    "lastKnownWriteTime" : 2110097460192,
+    "last_content_update" : 1577419380964,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "E2AE3FB5",
+        "caption" : "imr2011",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=imr2011&cache_key=E2AE3FB5",
+        "displayedObservations" : "51",
+        "environment" : "",
+        "expression" : "imr2011",
+        "object" : "imr2011",
+        "preview" : "0",
+        "totalObservations" : "51",
+        "variables" : "2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 23,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

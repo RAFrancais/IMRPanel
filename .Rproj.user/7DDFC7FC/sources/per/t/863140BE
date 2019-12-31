@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1577419378129.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "863140BE",
+    "lastKnownWriteTime" : 3548067076488918113,
+    "last_content_update" : 1577419378129,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7CDC1203",
+        "caption" : "hce2014",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=hce2014&cache_key=7CDC1203",
+        "displayedObservations" : 51,
+        "environment" : "",
+        "expression" : "hce2014",
+        "object" : "hce2014",
+        "preview" : 0,
+        "totalObservations" : 51,
+        "variables" : 2
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 18,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
