@@ -36,9 +36,10 @@ smo2013 <- read.csv("D:/RLearning/IMRPanel/Datasets/SMO2013.csv", stringsAsFacto
 smo2014 <- read.csv("D:/RLearning/IMRPanel/Datasets/SMO2014.csv", stringsAsFactors = FALSE)
 
 emission11_14 <- read.csv("D:/RLearning/IMRPanel/Datasets/emission11_14.csv", stringsAsFactors = FALSE)
+PI_pc <- read.csv("D:/RLearning/IMRPanel/Datasets/PersonalIncomePC.csv", stringsAsFactors = FALSE)
 
 #Fixing the broken first column name due to Microsoft Excel's csv "BOM" stuff
-Lstate <- list(cov2011 = cov2011, cov2012 = cov2012, cov2013 = cov2013, cov2014 = cov2014, hce2011 = hce2011, hce2012 = hce2012, hce2013 = hce2013, hce2014 = hce2014, hhi2011 = hhi2011, hhi2012 = hhi2012, hhi2013 = hhi2013, hhi2014 = hhi2014, imr2011 = imr2011, imr2012 = imr2012, imr2013 = imr2013, imr2014 = imr2014, pop2011 = pop2011, pop2012 = pop2012, pop2013 = pop2013, pop2014 = pop2014, emission11_14 = emission11_14)
+Lstate <- list(cov2011 = cov2011, cov2012 = cov2012, cov2013 = cov2013, cov2014 = cov2014, hce2011 = hce2011, hce2012 = hce2012, hce2013 = hce2013, hce2014 = hce2014, hhi2011 = hhi2011, hhi2012 = hhi2012, hhi2013 = hhi2013, hhi2014 = hhi2014, imr2011 = imr2011, imr2012 = imr2012, imr2013 = imr2013, imr2014 = imr2014, pop2011 = pop2011, pop2012 = pop2012, pop2013 = pop2013, pop2014 = pop2014, emission11_14 = emission11_14, PI_pc = PI_pc)
 Lstate <- lapply(Lstate, function(x) {names(x)[1] <- "State"; x})
 list2env(Lstate, envir = .GlobalEnv)
 
@@ -75,32 +76,47 @@ Lsmo <- lapply(Lsmo, function(x)x[x$Response == "Yes",])
 Lsmo <- lapply(Lsmo, function(x) {names(x) <- c("State", "Response", "SmokingRate"); x})
 list2env(Lsmo, envir = .GlobalEnv)
 
+#Personal Income per capita
+#Replacement for Household Income per capita
+PI_pc <- PI_pc[,c(1,8,9,10,11)]
+names(PI_pc)[c(2,3,4,5)] <- c("pi2011","pi2012","pi2013","pi2014")
+
 #2011
-cbind2011 <- cbind(cov2011, hce2011[2], hhi2011[2], imr2011[2], obe2011[2], pop2011[2:6], smo2011[3], emission11_14[2])
+cbind2011 <- cbind(cov2011, hce2011[2], hhi2011[2], imr2011[2], obe2011[2], pop2011[2:6], smo2011[3], emission11_14[2], PI_pc[2])
 cbind2011$Year <- "2011"
 cbind2011$ID <- c(1:51)
 colnames(cbind2011)[15] <- "emi_pc"
+colnames(cbind2011)[16] <- "pi_pc"
+
 #2012
-cbind2012 <- cbind(cov2012, hce2012[2], hhi2012[2], imr2012[2], obe2012[2], pop2012[2:6], smo2012[3], emission11_14[3])
+cbind2012 <- cbind(cov2012, hce2012[2], hhi2012[2], imr2012[2], obe2012[2], pop2012[2:6], smo2012[3], emission11_14[3], PI_pc[3])
 cbind2012$Year <- "2012"
 cbind2012$ID <- c(1:51)
 colnames(cbind2012)[15] <- "emi_pc"
+colnames(cbind2012)[16] <- "pi_pc"
+
 #2013
-cbind2013 <- cbind(cov2013, hce2013[2], hhi2013[2], imr2013[2], obe2013[2], pop2013[2:6], smo2013[3], emission11_14[4])
+cbind2013 <- cbind(cov2013, hce2013[2], hhi2013[2], imr2013[2], obe2013[2], pop2013[2:6], smo2013[3], emission11_14[4], PI_pc[4])
 cbind2013$Year <- "2013"
 cbind2013$ID <- c(1:51)
 colnames(cbind2013)[15] <- "emi_pc"
+colnames(cbind2013)[16] <- "pi_pc"
+
 #2014
-cbind2014 <- cbind(cov2014, hce2014[2], hhi2014[2], imr2014[2], obe2014[2], pop2014[2:6], smo2014[3], emission11_14[5])
+cbind2014 <- cbind(cov2014, hce2014[2], hhi2014[2], imr2014[2], obe2014[2], pop2014[2:6], smo2014[3], emission11_14[5], PI_pc[5])
 cbind2014$Year <- "2014"
 cbind2014$ID <- c(1:51)
 colnames(cbind2014)[15] <- "emi_pc"
-#Panel data compliation
-IMRpd <- rbind(cbind2011, cbind2012, cbind2013, cbind2014)
-#Southern dummy variables
-IMRpd$dixieSouth <- ifelse(IMRpd$State %in% c("Texas" , "Oklahoma" , "Missouri" , "Arkansas" , "Louisiana" , "Kentucky" , "Tennesee" , "Mississippi" , "Alabama" , "Georgia" , "Florida" , "South Carolina" , "North Carolina" , "Virginia" , "West Virginia"), 1, 0)
-IMRpd$deepSouth <- ifelse(IMRpd$State %in% c("Arkansas" , "Louisiana", "Tennesee" , "Mississippi" , "Alabama" , "Georgia", "South Carolina" , "North Carolina"), 1, 0)
+colnames(cbind2014)[16] <- "pi_pc"
 
+#Panel data compliation
+IMRdf <- rbind(cbind2011, cbind2012, cbind2013, cbind2014)
+#Southern dummy variables
+IMRdf$dixieSouth <- ifelse(IMRdf$State %in% c("Texas" , "Oklahoma" , "Missouri" , "Arkansas" , "Louisiana" , "Kentucky" , "Tennesee" , "Mississippi" , "Alabama" , "Georgia" , "Florida" , "South Carolina" , "North Carolina" , "Virginia" , "West Virginia"), 1, 0)
+IMRdf$southeast <- ifelse(IMRdf$State %in% c("Arkansas" , "Louisiana", "Tennesee" , "Mississippi" , "Alabama" , "Georgia", "South Carolina" , "North Carolina", "Florida", "Virginia", "West Virginia", "Kentucky"), 1, 0)
+#
+IMRdf$loghhi <- log(IMRdf$Household_Income)
+write.csv(IMRdf, "D:/RLearning/IMRPanel/Datasets/IMRdf.csv")
 
 
 
